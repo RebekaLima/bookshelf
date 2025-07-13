@@ -1,16 +1,14 @@
 <?php
 
+$server='localhost';
 $username = 'root';
-$password = '';
+$password = ' ';
+$dbname = 'bookshelf';
 
-$conn = new PDO('mysql:host=localhost;dbname=bookshelf', $username, $password);
+$conn = mysqli_connect($server, $username, $password, $dbname);
 
-try {
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "banco conectado";
-} catch(PDOException $e) {
-    echo 'ERROR'.$e->getMessage();
+if(!$conn) {
+    die("Error".mysqli_connect_error());
 }
-
 
 ?>
