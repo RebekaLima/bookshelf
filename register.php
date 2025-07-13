@@ -8,7 +8,7 @@
         $surname = $_POST['surname'];
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = ($_POST['password']);
 
     $sql = "INSERT INTO tb_users(nome, surname, username, email, senha)
             VALUES ('$nome', '$surname', '$username', '$email', '$password')";
